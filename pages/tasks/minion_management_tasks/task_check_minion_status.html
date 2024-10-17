@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- link to style -->
+    <link rel="stylesheet" href="../../../css/style.css">
+
+    <!-- link to script -->
+    <script src="../../../main.js"></script>
+
+    <title>Document</title>
+</head>
+<body >
+    <main>
+        <div class="task_content">
+            <div>
+                <h2>Check minion status with test.ping</h2>
+                <section>
+                    <h3> How to check minion status with test.ping </h3>
+                    <p>Run the following command to check the status of the minion:</p>
+                    <p>
+                        <aside><code>salt '*' test.ping</code></aside>
+                    </p>
+                    <hr>
+                </section>
+            </div>
+            <div class="task_run">
+                <section>
+                    <h3>Run check</h3>
+                    <form id="RunTaskForm">
+                        <div w3-include-html="../run_task_form.html"></div> 
+                    </form>   
+            </div>
+            <div class="task_results">
+                <section>
+                    <h3>Results</h3>
+                    <div class="TaskResults" id="TaskResults">
+                        <p>Results will be displayed here.</p>
+
+                    </div>
+                </section>
+            </div>
+        </div>
+        <script>
+            includeHTML();
+            submitRunTaskForm();
+        </script>
+    </main>
+</body>
+</html>
