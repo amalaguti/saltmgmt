@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+    <!-- Run Task Form elements --> 
+     
+        <div>
+            <label id="label_token" for="token">Token (Optional)</label>
+            <input type="text" id="token" name="token" value="">
+        </div>
+
+        <div>
+            <label id="label_client" for="client">Client</label>
+            <input type="text" id="client" name="client" value="local" required>
+        </div>
+
+        <!-- Hide this field, currently not used in this interface -->
+        <div class="hideME">
+            <label for="eauth">Eauth</label>
+            <input type="text" id="eauth" name="eauth" value="pam" required>
+        </div>
+
+        <div>
+            <label id="label_fun" for="fun">Function</label>
+            <input type="text" id="fun" name="fun" value="test.ping" required>
+        </div>
+
+        <div>
+            <label id="label_tgt" for="tgt">Target</label>
+            <input type="text" id="tgt" name="tgt" value="*" required>
+        </div>
+
+        <div>
+            <label id="label_arg" for="arg">Args</label>
+            <input type="text" id="arg" name="tgt" value="[]">
+        </div>
+
+        <div>
+            <label id="label_kwarg" for="kwarg">Kwargs</label>
+            <input type="text" id="kwarg" name="kwarg" value="{}">
+        </div>
+        
+        <div>
+            <button type="submit">Submit</button>
+        </div>
+
+</body>
