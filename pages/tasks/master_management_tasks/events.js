@@ -1,0 +1,135 @@
+let eventSource;
+
+function stopEventWatcher(message) {
+    if (eventSource) {
+        eventSource.close();
+        console.log('Event source closed.');
+        const eventsDiv = window.parent.document.getElementById('events');
+        const eventDiv = document.createElement('div');
+        if (message) {
+            eventDiv.innerText = message;
+        } else {
+            eventDiv.innerText = 'Event source closed.';
+        }
+        eventsDiv.appendChild(eventDiv);
+
+    } else {
+        console.log('No event source to close.');
+    }
+}
+
+function clearEvents() {
+    const eventsDiv = window.parent.document.getElementById('events');
+    eventsDiv.innerHTML = '';
+    eventsDiv.classList.add('hideME');
+}
+
+function eventWatcher(token, master, port, jid, minion) {
+    /* Watch for events from the Salt Master 
+    For each received and filtered in event it creates
+    a new div element as child of the events div which is initially
+    hidden */
+
+    if (typeof token === 'string' && token.trim() === '') {
+        console.log('Token is an empty string.');
+    }
+
+    if (typeof master === 'string' && master.trim() === '') {
+        master = 'localhost';
+    }
+
+    if (typeof port === 'string' && port.trim() === '') {
+        port =  '8003';
+    }
+
+    if (typeof jid === 'string' && jid.trim().length === 20) {
+        console.log('JID is a valid timestamp.');
+    } else if (typeof jid === 'string' && jid.trim().length >= 8 && jid.trim().length < 20) {
+        console.log('JID is a valid complete job id.');
+        jid += '*';
+    } else {
+        jid = '*';
+    }
+
+    if (typeof minion === 'string' && minion.trim() === '') {
+        minion =  '*';
+    }
+
+    const XAuthToken = token;
+
+    console.log(`>>>> XAuthToken ${XAuthToken}`);
+    console.log(`>>>> Master ${master}`);
+    console.log(`>>>> Port ${port}`);
+    console.log(`>>>> JID ${jid}`);
+    console.log(`>>>> Minion ${minion}`);
+
+    
+    
+    const url = `https://${master}:${port}/events?salt_token=${XAuthToken}`;
+    console.log(`>>>> Event Watcher for ${url}`);
+    eventSource = new EventSource(`${url}`);
+
+    const maxEvents = 5;
+    let receivedEvents = 0;
+    const maxCloseEvents = 100;
+    const eventsContainer = window.parent.document.getElementById('div_task_outcome');
+    
+    const tag_pattern = `salt/job/${jid}/ret/${minion}`;
+    console.log(`>>>> tag_pattern ${tag_pattern}`);
+    var isJobReturn = fnmatch(tag_pattern);
+    
+    const eventsDiv = window.parent.document.getElementById('events');
+    eventsDiv.classList.remove('hideME');
+
+    eventSource.onmessage = function (event) {
+        const eventData = JSON.parse(event.data);
+        const eventDiv = document.createElement('div');
+        
+        receivedEvents += 1;
+        console.log('>>>> Events received:' + receivedEvents);
+
+        if (isJobReturn(eventData.tag)) {
+            console.log(`>>>> Job return event ${eventData.tag}, process it !!!`);
+            console.log(`>>>> ${JSON.stringify(eventData.data)}`);
+
+            eventDiv.innerText = `
+                TAG: ${eventData.tag}
+                MINION:  ${eventData.data.id}
+                JID: ${eventData.data.jid}
+                DATA: ${JSON.stringify(eventData.data)}
+            `;
+
+            eventsDiv.appendChild(eventDiv);
+            if (eventsContainer.children.length > maxEvents) {
+                eventsContainer.removeChild(eventsContainer.firstChild);
+            }
+        }
+
+        if ( receivedEvents > maxCloseEvents) {
+            console.log('>>>> Forced closing event source, max events reached');
+            stopEventWatcher('Event source closed, max events reached');
+        }
+    };
+
+
+    eventSource.onerror = function () {
+        console.error('Error occurred while connecting to the event source.');
+        eventSource.close();
+    };
+
+}
+
+
+// A simple function to allow Salt-style globbing on event tags.
+function fnmatch(pattern) {
+    if (pattern.indexOf('*') === -1) {
+        return filename => pattern === filename;
+    } else {
+        // Taken from Lodash (MIT).
+        // Use _.escapeRegExp directly if available.
+        var reRegExpChar = /[\\^$.*+?()[\]{}|]/g;
+        var escaped = pattern.replace(reRegExpChar, '\\$&');
+        var matcher = new RegExp('^' + escaped.replace(/\\\*/g, '.*') + '$');
+        return filename => matcher.test(filename);
+    }
+}
