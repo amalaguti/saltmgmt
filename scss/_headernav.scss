@@ -1,0 +1,115 @@
+@use 'vars' as vars;
+
+.logo {
+    border-radius: 50%;
+    box-shadow: 0 4px 12px black;
+    height: auto;
+    width: 110px;
+    animation: logoExpandMove 10s infinite;
+}
+
+.logo:hover {
+    box-shadow: 0 12px 24px vars.$primary-bg-color;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    transform: rotate(-10deg);
+}
+
+@keyframes logoExpandMove {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    50% {
+        transform: translateX(50px);
+    }
+}
+
+
+.top_menu_hor_tabs {
+    border: 1px solid vars.$primary-bg-color;
+    border-bottom: 4px solid vars.$primary-bg-color;
+    border-right: 3px solid vars.$primary-bg-color;
+    border-radius: 8px;
+    box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(to bottom, vars.$light-fg-color, #dfe6e9);
+    padding: 10px;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+
+    li {
+        border-radius: 2px;
+
+        background: linear-gradient(to right, #304254, #516f8f);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 6px 20px rgba(0, 0, 0, 0.19);
+        margin-left: 12px;
+        margin-right: 12px;
+        margin-top: 6px;
+        margin-bottom: 5px;
+        min-width: 100px;
+        justify-items: center !important;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3), 0 12px 40px rgba(0, 0, 0, 0.19);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    }
+
+    li:hover {
+        background-color: vars.$darkblue;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3), 0 12px 40px rgba(0, 0, 0, 0.19);
+        transform: perspective(1000px) rotateX(0deg) translateY(-5px);
+    }
+}
+
+
+
+
+
+.navbar-toggler {
+    background-color: black;
+    border: 2px solid vars.$darkblue;
+    border-radius: 0.25em;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.navbar-toggler-icon {
+    background-color: rgb(24, 38, 62);
+    border: px solid vars.$darkblue;
+    border-radius: 0.25em;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+.navbar-toggler:hover,
+.navbar-toggler-icon:hover {
+    background-color: vars.$primary-bg-color;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    transform: scale(1.05);
+}
+
+.dropdown-menu {
+    background-color: transparent;
+}
+
+#search_salt_input {
+    float: right;
+    right: 10px;
+    top: 1em;
+    margin-top: 1em;
+    width: 30ch;
+    border: 1px solid vars.$darkblue;
+    border-radius: 0.25em;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+#btn_header_toggle {
+    float: right;
+    right: 10px;
+    top: 4em;
+    margin-top: 10px;
+
+    position: absolute;
+    left: auto;
+    
+}

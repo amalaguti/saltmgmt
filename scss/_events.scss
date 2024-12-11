@@ -1,0 +1,23 @@
+
+#events {
+    background-color: black;
+    min-height: 800px;
+    overflow-y: auto;
+    font-family: "Courier New", Courier, monospace;
+    margin: 20px;
+    color: rgb(51, 216, 51);
+
+}
+
+#events div {
+    font-family: "Courier New", Courier, monospace;
+    margin: 20px;
+    padding: 10px;
+    margin-bottom: 10px;
+    font-size: 12px;
+
+
+    background-color: rgb(52, 78, 80);
+    overflow-wrap: anywhere;
+
+}
