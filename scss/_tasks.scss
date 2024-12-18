@@ -1,0 +1,167 @@
+@use 'vars' as vars;
+
+.tasks {
+    ul {
+        list-style-type: none;
+        padding: 1em;
+        transition: padding 0.3s ease;
+    }
+
+    ul li {
+        padding: 0.5rem 1em;
+        transition: background-color 0.3s ease, color 0.3s ease;
+        background-color: transparent;
+        overflow: hidden;
+        font-size: vars.$fontsize-small;
+
+    }
+
+    ul li:hover {
+        background-color: vars.$darkblue;
+        color: vars.$light-fg-color;
+        cursor: pointer;
+        transform: scale(1.1);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        border-radius: 0.2em;
+        overflow: hidden;
+    }
+}
+
+#task_bullet_command {
+    padding: 0.5rem 1em;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    background-color: vars.$darkblue;
+    color: vars.$light-fg-color;
+    border-radius: 0.5em;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    font-weight: bold;
+    text-align: center;
+    margin: 1rem 0;
+
+    :hover {
+        background-color: var(--linkblue);
+        color: vars.$light-fg-color;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        transform: scale(1.2);
+    }
+
+}
+
+
+[class^="hide_task_"] {
+    display: none;
+}
+
+.tasks_info {
+    display: flex;
+    flex-direction: column;
+
+    iframe {
+        width: 100%;
+        margin-top: 1em;
+        margin-bottom: 2em;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        border-radius: 0.5em;
+    }
+
+
+}
+
+
+
+.task_content {
+    background-color: vars.$primary-bg-color;
+
+    aside {
+        color: yellowgreen;
+        white-space: pre-wrap;
+    }
+
+    hr {
+        height: 4px;
+    }
+
+}
+
+
+.task_run {
+    color: vars.$primary-bg-color;
+    column-gap: 10px;
+    font-size: vars.$fontsize-small;
+    
+
+    input,
+    select {
+        width: clamp(100px, 75%, 200px);
+        padding-right: 10px;
+        margin-right: 10px;
+    }
+
+    input:hover {
+        border-radius: 0.4em;
+        border: 2px solid vars.$darkblue;
+        background-color: vars.$primary-bg-color;
+    }
+    
+    .button--start {
+        margin-bottom: 0.5em;
+        background-color: vars.$darkblue;
+        color: vars.$light-fg-color;
+        padding: 5px;
+        border-radius: 5px;
+        font-size: vars.$fontsize-small;
+    }
+
+    .button--stop {
+        @extend .button--start;
+        background-color: red;
+    }
+
+    .button--clear {
+        @extend .button--start;
+        background-color: green;
+    }
+
+}
+
+
+.task_run_flow-event {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.task_run_event-step {
+    background-color: #007bff;
+    color: white;
+    border-radius: 50%;
+    width: 20px;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+    flex-shrink: 0;
+}
+
+.task_run_event-description {
+    font-size: vars.$fontsize-small;
+}
+
+
+#TaskResults {
+    display: none;
+    background-color: vars.$primary-bg-color;
+    color: white;
+    padding: 1em;
+    border-radius: 0.5em;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    font-family: "Courier New", Courier, monospace;
+    font-size: 1.2em;
+    font-optical-sizing: auto;
+    white-space: pre-wrap;
+    max-height: 300vh;
+    margin-top: 1em;
+
+
+}
