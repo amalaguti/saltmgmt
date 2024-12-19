@@ -1,0 +1,24 @@
+@use 'vars' as vars;
+
+.area_tasks {
+    grid-area: area_tasks;
+    // background-color: vars.$primary-bg-color;
+}
+
+.area_task_info {
+    grid-area: area_task_info;
+    background-color: vars.$light-fg-color;
+    color: black;
+    margin-right: 5px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+
+.area_task_outcome {
+    grid-area: area_task_outcome;
+    background-color: vars.$light-fg-color;
+    color: black;
+    margin-right: 5px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+}

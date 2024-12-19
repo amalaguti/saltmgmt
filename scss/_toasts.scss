@@ -1,0 +1,15 @@
+.toastInfo {
+    background: rgb(0, 166, 255);
+    border: 1px solid rgb(0, 50, 77);
+    max-width: 40ch;
+    border-radius: 10px;
+    text-wrap: pretty;
+}
+
+.toastError {
+    background: rgb(210, 37, 37);
+    border: 1px solid rgb(0, 50, 77);
+    max-width: 100ch;
+    border-radius: 10px;
+    text-wrap: pretty;
+}
