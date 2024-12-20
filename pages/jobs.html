@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <!-- Google font Red Hat Display -->
+  <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap"
+    rel="stylesheet" />
+  <!-- Google font Urbanist -->
+  <link href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet" />
+
+  <!-- Animate CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+  <!-- AOS CSS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+  <!-- Toastify CSS -->
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+
+  <!-- SCRIPT -->
+  <script src="../main.js"></script>
+  <!-- link to style -->
+  <link rel="stylesheet" href="../css/style.css">
+
+  <title>AmalgaMate</title>
+
+</head>
+
+<body style="background: linear-gradient(to bottom, #243240, #516f8f);" onload="loadNavbar()">
+  <div class="container-fluid" style="padding-left: 0; padding-right: 0;">
+    <!-- container-fluid start -->
+
+    <!-- NAV/HEADER -->
+    <div class="row sticky-md-top mb-4 div__navbar" style="background: linear-gradient(to bottom, #37577a, #273646);" w3-include-html="./navbar-pages.html">
+      <!-- Navbar included from ./pages/navbar.html -->
+    </div>
+
+
+    <!-- MAIN -->
+    <div class="row"> <!-- row MAIN start -->
+      <div class="container-grid-main-row"> <!-- container-main-row start -->
+        <div class="area_left_sidebar">
+          <!-- Left-side content -->
+          <div class="col-sm-12 col-xxl bg-secondary invisible" style="min-height:10px; ">
+          </div>
+        </div>
+
+
+        <!-- Main content -->
+        <div class="col-sm-12 p-4 rounded-4">
+          <div class="row">
+            <div class="col-12 mt-2 bg-light rounded-4">
+              <section class="inner_content_section mt-4 mb-4 p-4 rounded-3">
+                <h2 class="text-light mb-4">Jobs Service Catalog and Activity Panel</h2>
+                <a href="./jobs.html">Jobs Panel</a>
+                <hr class="border-light border-5" />
+                <h3>Jobs Catalog</h3>
+                <p> ... work in progress </p>
+                <h3> Jobs Activity Panel</h3>
+                <p> ... work in progress </p>
+              </section>
+            </div>
+          </div>
+
+          <!-- Main content / Tasks -->
+          <!-- TASKS CONTENT AREA -->
+          <!-- Go for pages in ./tasks -->
+          <div class="row mt-3">
+            <div class="col-sm-12 col-md-12 bg-dark p-4 rounded-4">
+              <div class="grid-container-pages rounded-4">
+                <!-- Tasks -->
+                <div class="area_tasks rounded-3  main-content tasks" style="max-height: fit-content">
+                  <section>
+                    <h4 class="mt-2 ml-2">Jobs</h4>
+                    <ul class="list-group list-group-flush tasks_list fw-light">
+                      <li class="list-group-item" id="task_update_system_packages" onclick="toggleTaskInfo()"><span
+                          style="font-size: 2em;">🔄</span> Update system packages</li>
+                      <li class="list-group-item" id="task_install_software" onclick="toggleTaskInfo()"><span
+                          style="font-size: 2em;">💻</span> Install software</li>
+                      <li class="list-group-item" id="task_manage_user_accounts" onclick="toggleTaskInfo()"><span
+                          style="font-size: 2em;">👤</span> Manage user accounts</li>
+                      <li class="list-group-item" id="task_monitor_perf" onclick="toggleTaskInfo()"><span
+                          style="font-size: 2em;">📊</span> Monitor system performance</li>
+                      <li class="list-group-item" id="task_config_network" onclick="toggleTaskInfo()"><span
+                          style="font-size: 2em;">🌐</span> Configure network settings</li>
+                    </ul>
+                  </section>
+                </div>
+
+                <!-- Task Info -->
+                <div class="area_task_info p-3 rounded-4  main-content tasks_info">
+                  <section>
+                    <h5>Jobs Service Catalog</h5>
+                    <p>Manage your jobs catalog here</p>
+                  </section>
+                  <section>
+                    <h5>Jobs Activity Panel</h5>
+                    <p>Monitor jobs execution</p>
+                  </section>
+                </div>
+
+
+                <!-- Task Outcome -->
+                <div class="area_task_outcome p-3 rounded-4 main-content tasks_info" style="max-height: fit-content">
+                  <section>
+                    <h5>Task outcome</h5>
+                  </section>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right-side content -->
+        <div class="area_toolsbar">
+          <div id="tools-panel" class="col-sm-12 col-xxl-1 bg-secondary m-0 p-0">
+            <!-- Right-side content -->
+            <div class="tools_btn_container">
+              <button id="btn_header_toggle" class="btn btn-dark btn-lg" onclick="toggleHeader()">
+                Nav<br>&#x25B2; &#x25BC;
+              </button>
+            </div>
+
+            <div class="tools_btn_container">
+              <button id="btn_tokens_copy" type="button" class="btn btn-dark btn-lg" data-bs-toggle="modal"
+                data-bs-target="#tokensModal" data-bs-customData="Tokens">
+                Tokens<br>🔑
+              </button>
+              <!-- Modals -->
+              <div class="modal fade" id="tokensModal" tabindex="-1" aria-labelledby="tokensModalLabel">
+                <div class="modal-dialog modal-lg">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h6 class="modal-title text-white" id="tokensModalLabel">Available tokens</h6>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      <button type="button" class="btn btn-primary" onclick="copyToken()">Copy token</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="tools_btn_container">
+              <button id="btn_masters" type="button" class="btn btn-dark btn-lg" data-bs-toggle="modal"
+                data-bs-target="#mastersModal" data-bs-customData="Masters">
+                Masters<br>🖥️
+              </button>
+              <!-- Modals -->
+              <div class="modal fade" id="mastersModal" tabindex="-1" aria-labelledby="mastersModalLabel">
+                <div class="modal-dialog modal-lg">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h6 class="modal-title text-white" id="mastersModalLabel">Managed Masters</h6>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      <button type="button" class="btn btn-primary"
+                        onclick="pickFromModal_Items('mastersModal','masterSelected')">Pick master</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="tools_btn_container">
+              <button id="btn_minions" type="button" class="btn btn-dark btn-lg" data-bs-toggle="modal"
+                data-bs-target="#minionsModal" data-bs-customData="Minions">
+                Minions<br>👾
+              </button>
+              <!-- Modals -->
+              <div class="modal fade" id="minionsModal" tabindex="-1" aria-labelledby="minionsModalLabel">
+                <div class="modal-dialog modal-lg">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h6 class="modal-title text-white" id="minionsModalLabel">Managed Minions</h6>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      <button type="button" class="btn btn-primary"
+                        onclick="pickFromModal_Items('minionsModal','minionSelected')">Pick minion</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="tools_btn_container">
+              <button id="btn_jobs" type="button" class="btn btn-dark btn-lg" data-bs-toggle="modal"
+                data-bs-target="#jobsModal" data-bs-customData="Jobs">
+                Jobs<br>💼
+              </button>
+              <!-- Modals -->
+              <div class="modal fade" aria-hidden="false" id="jobsModal" tabindex="-1" aria-labelledby="jobsModalLabel">
+                <div class="modal-dialog modal-lg">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h6 class="modal-title text-white" id="jobsModalLabel">Managed jobs</h6>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      <button type="button" class="btn btn-warning" onclick="removeFromModal_Items('jobsModal','asyncJIDs')">
+                        Remove Job
+                      </button>
+                      <button type="button" class="btn btn-primary"
+                        onclick="pickFromModal_Items('jobsModal','jobselected')">
+                        Pick job
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            
+            <div class="tools_btn_container">
+              <button id="btn_test-4" class="btn btn-dark btn-lg">
+                Tl4<br>🚫
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <script>
+          tokensModalData()
+          SessStgItemsModalData('mastersModal', 'masters')
+          SessStgItemsModalData('minionsModal', 'minions')
+          SessStgItemsModalData('jobsModal', 'asyncJIDs')
+        </script>
+      </div> <!-- container-main-row end -->
+    </div> <!-- row MAIN end -->
+  </div> <!-- container-fluid end -->
+
+  <!-- WIP -->
+  <div class="row">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-6" data-aos="flip-up" data-aos-delay="200" data-aos-duration="1000">
+          <div id="wip" class="text-warning" w3-include-html="./wip.html"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- FOOTER -->
+  <div class="row">
+    <div class="col-12 footer">
+      <p>
+        &copy; 2024 - Adrian Malaguti. All rights reserved.
+        <a href="./contact_us.html">Contact Us</a>
+      </p>
+    </div>
+  </div>
+
+
+
+  <script>
+    <!-- Include HTML -->
+    includeHTML();
+  </script>
+
+
+  <script>
+    AOS.init();
+  </script>
+
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+
+</body>
+
+</html>

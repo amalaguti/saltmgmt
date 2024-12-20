@@ -1,0 +1,5 @@
+@use 'vars' as vars;
+
+#wip h1 {
+    color: vars.$light-fg-color;
+}
