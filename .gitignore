@@ -1,0 +1,6 @@
+.token
+NOTES.md
+.DS_Store
+coder_fullstack.code-workspace
+**/*.bkp
+node_modules

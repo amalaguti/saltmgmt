@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./events.js"></script>
+
+    <title>Document</title>
+</head>
+<style>
+    body {
+        font-family: "Courier New", Courier, monospace;
+        margin: 20px;
+    }
+
+    #events {
+        background-color: black;
+        min-height: 800px;
+        overflow-y: auto;
+
+    }
+
+    #events div {
+        padding: 10px;
+        margin-bottom: 10px;
+        font-size: 12px;
+        color: rgb(51, 216, 51);
+        background-color: transparent;
+    }
+</style>
+
+<body>
+    <button onclick="eventWatcher()">Start Event Watcher</button>
+    <button onclick="stopEventWatcher()">Stop Event Watcher</button>
+
+    <div id="events"></div>
+    
+
+</body>
+
+</html>

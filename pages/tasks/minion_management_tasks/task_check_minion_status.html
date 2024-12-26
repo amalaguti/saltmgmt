@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- Google font Red Hat Display -->
+    <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap"
+        rel="stylesheet" />
+    <!-- Google font Urbanist -->
+    <link href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet" />
+
+    <!-- Toastify CSS -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+
+    <!-- SCRIPT -->
+    <script src="../../../main.js"></script>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <!-- link to style -->
+    <link rel="stylesheet" href="../../../css/style.css">
+
+    <title>Chack Minion Status</title>
+
+</head>
+
+<body style="background-color: var(--darkbackground);">
+    <main>
+        <div class="task_content p-3 m-0">
+            <section class="p-2">
+                <h2 class="text-white mb-4" style="text-shadow:none">Check minion status with test.ping</h2>
+                <h3>How to check minion status with test.ping</h3>
+                <p class="lh-lg" style="font-family: Urbanist"></p>Run the following command to check the status of the
+                minion</p>
+                <span>
+                    <aside class="bg-dark p-3 rounded"><code class="text-white">salt '*' test.ping</code></aside>
+                </span>
+                <hr>
+            </section>
+
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-5 p-md-2 bg-white rounded task_run">
+                        <section>
+                            <h4 class="mt-2">Run command</h4>
+                            <form id="RunTaskForm">
+                                <div class="row p-1">
+                                    <div class="col hideME">
+                                        <label for="eauth">Eauth</label>
+                                    </div>
+                                    <div class="col hideME text-end">
+                                        <input type="text" id="eauth" name="eauth" value="pam" required>
+                                    </div>
+                                </div>
+
+                                <div class="row p-1 align-items-center">
+                                    <div class="col">
+                                        <label id="label_master" for="master">Master</label>
+                                    </div>
+                                    <div class="col text-end">
+                                        <select name="master" id="selectMaster" class="p-2 rounded">
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="row p-1 align-items-center">
+                                    <div class="col">
+                                        <label id="label_client" for="client">Client</label>
+                                    </div>
+                                    <div class="col text-end">
+                                        <select id="client" name="client" class="p-2 rounded">
+                                            <option value="local" selected>local</option>
+                                            <option value="local_async">local_async</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="row p-1 align-items-center"">
+                                    <div class=" col">
+                                    <label id="label_fun" for="function">Function</label>
+                                </div>
+                                <div class="col text-end">
+                                    <input id="fun" name="function" type="text" value="" class="p-2 rounded" required>
+                                </div>
+                    </div>
+
+                    <div class="row p-1 align-items-center"">
+                                    <div class=" col">
+                        <label id="label_tgt" for="tgt">Target</label>
+                    </div>
+                    <div class="col text-end">
+                        <input id="tgt" name="tgt" type="text" value="*" required class="p-2 rounded">
+                    </div>
+                </div>
+
+
+                <div class="row p-1 align-items-center"">
+                                    <div class=" col">
+                    <label id="label_arg" for="arg">Args</label>
+                </div>
+                <div class="col text-end">
+                    <input id="arg" name="arg" type="text" value="[]" class="p-2 rounded">
+                </div>
+            </div>
+
+
+            <div class="row p-1 align-items-center"">
+                                    <div class=" col">
+                <label id="label_kwarg" for="kwarg">Kwargs</label>
+            </div>
+            <div class="col text-end">
+                <input id="kwarg" type="text" name="kwarg" value="{}" class="p-2 rounded">
+            </div>
+        </div>
+
+
+        <div class="row p-1 align-items-center"">
+                                    <div class=" col">
+            <label id="label_token" for="token">Token (Optional)</label>
+        </div>
+        <div class="col text-end">
+            <input type="text" id="token" name="token" value="" class="p-2 rounded">
+        </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <button class="btn btn-primary mb-2" type="submit">Submit</button>
+            </div>
+        </div>
+        </form>
+        </section>
+        </div>
+        <div class="col-md-6 mt-3 m-md-2 p-md-2 rounded task_run_description">
+            <section>
+                <h4 class="mb-2 pb-2">Flow of Events</h4>
+                <div class="task_run_flow-event">
+                    <span class="task_run_event-step">1</span>
+                    <span class="task_run_event-description">Form talks to FastAPI endpoint</span>
+                </div>
+                <div class="task_run_flow-event">
+                    <span class="task_run_event-step">2</span>
+                    <span class="task_run_event-description">FastAPI processes the request and sends command
+                        to
+                        Salt API</span>
+                </div>
+                <div class="task_run_flow-event">
+                    <span class="task_run_event-step">3</span>
+                    <span class="task_run_event-description">Salt Master executes the command on target and
+                        sends response back to FastAPI</span>
+                </div>
+                <div class="task_run_flow-event">
+                    <span class="task_run_event-step">4</span>
+                    <span class="task_run_event-description">FastAPI sends response back to page</span>
+                </div>
+            </section>
+        </div>
+        </div>
+        </div>
+        </div>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+        <script>
+            includeHTML();
+            setMastersHTMLSelOptions(elemName = 'selectMaster');
+            submitRunTaskForm();
+        </script>
+
+    </main>
+</body>
+
+</html>

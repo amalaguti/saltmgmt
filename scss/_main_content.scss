@@ -1,0 +1,9 @@
+@use 'vars' as vars;
+
+.inner_content_section {
+    font-family: "Urbanist", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: bolder;
+    background: vars.$primary-bg-color;
+
+}

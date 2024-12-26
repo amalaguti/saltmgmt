@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <!-- Google font Red Hat Display -->
+  <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap"
+    rel="stylesheet" />
+  <!-- Google font Urbanist -->
+  <link href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet" />
+
+  <!-- Animate CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+  <!-- AOS CSS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+  <!-- Toastify CSS -->
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+
+  <!-- SCRIPT -->
+  <script src="./main.js"></script>
+
+  <!-- link to normalize style -->
+  <link rel="stylesheet" href="./css/normalize.css">
+  <!-- link to style -->
+  <link rel="stylesheet" href="./css/style.css">
+
+  <title>AmalgaMate</title>
+
+</head>
+
+<body style="background: linear-gradient(to bottom, #243240, #516f8f);" onload="loadNavbar()">
+  <div class="container-fluid" style="padding-left: 0; padding-right: 0;">
+    <!-- container-fluid start -->
+    <!-- NAV/HEADER -->
+    <div class="row sticky-md-top mb-4 div__navbar" style="background: linear-gradient(to bottom, #37577a, #273646);"
+      w3-include-html="./pages/navbar.html">
+      <!-- Navbar included from ./pages/navbar.html -->
+    </div>
+
+
+    <!-- MAIN -->
+    <div class="row"> <!-- row MAIN start -->
+      <div class="container-grid-main-row"> <!-- container-main-row start -->
+        <div class="area_left_sidebar">
+          <!-- Left-side content -->
+        </div>
+
+        <!-- Main content / Welcome -->
+        <div class="area_central_content">
+          <!-- Main content -->
+          <div class="row m-4">
+            <div class="col bg-dark p-4 rounded-4">
+              <h2 class="welcome-header animate__animated animate__pulse animate__repeat-2 animate__slow">Welcome
+                to<br>Salt<br>AmalgaMate</h2>
+
+              <!-- Introduction first row -->
+              <div class="row ">
+                <div class="col-sm-6">
+                  <div class="row animate__animated animate__fadeIn">
+                    <h3> What is AmalgaMate? </h3>
+                    <div class="col">
+                      <p class="intro-text-p intro-text text-primary-emphasis rounded-2">
+                        <strong style="font-size: 1.1em">Salt AmalgaMate</strong> <br>
+                        is a full-stack solution that seamlessly integrates various
+                        frontend and backend technologies centered around the <strong><a href="https://saltproject.io/"
+                            target="_blank" style="color: inherit; text-decoration: none;">open Salt
+                            project</a></strong>
+                        tool.
+                        <br>
+                      </p>
+                      <p class="intro-text-p intro-text rounded-2">
+                        In case you wonder, the term <strong style="font-size: 1.1em;">"AmalgaMate"</strong> reflects
+                        the
+                        <em>amalgamation</em> of these
+                        technologies. This tool is designed
+                        to be
+                        a helpful companion for managing and monitoring Salt projects combined with other
+                        technologies.
+                      </p>
+                    </div>
+
+                  </div>
+
+
+                  <!-- Introduction secong (large) row -->
+                  <div class="row animate__animated animate__fadeIn">
+                    <h3> Purpose</h3>
+                    <div class="col">
+                      <div data-aos="flip-up" data-aos-delay="100" data-aos-duration="2000">
+                        <p class="intro-text-p intro-text rounded-2">
+                          <strong style="font-size: 1.1em;"><em>The goal is to provide a simple to use UI on top of
+                              Salt,
+                              <br>
+                              ...yet effective and educational, while demonstrating multiple feasible
+                              integrations</em></strong>
+                        </p>
+                      </div>
+
+                      <div data-aos="flip-up" data-aos-delay="150" data-aos-duration="2000">
+                        <p class="intro-text-p intro-text rounded-2">
+                          This project serves as my experimental platform to explore various technologies and enhance
+                          my
+                          expertise as a DevOps engineer.<br>
+                          <strong><em>Not a fancy UI designer, just effective enough to get the job
+                              done.</em></strong>
+                        </p>
+                      </div>
+                    </div>
+
+                    <div class="col-xxl-4">
+                      <div data-aos="flip-up" data-aos-delay="100" data-aos-duration="2000">
+                        <p class="intro-text-p intro-text rounded-2">
+                          The tool is designed to help manage and monitor "Salty"
+                          environments, but also as a <strong><em>platform to test other technologies and
+                              integrations</em></strong> <br>
+                        </p>
+                      </div>
+
+                      <div data-aos="flip-up" data-aos-delay="150" data-aos-duration="2000">
+                        <p class="intro-text-p intro-text rounded-2">
+                          In addition it can be used also as a <strong><em>learning or training content
+                              portal</em></strong>,
+                          which is embedded in the
+                          project to help others understand the technologies used in this project and how to execute
+                          Salt
+                          jobs
+                          in a simple manner.
+                        </p>
+                      </div>
+
+                    </div>
+                  </div>
+
+                </div>
+
+                <div class="col-sm-5">
+                  <div class="row animate__animated animate__fadeIn">
+                    <div class="col d-block">
+                      <h3> How it works</h3>
+                      <div data-aos="flip-up" data-aos-delay="100" data-aos-duration="1000">
+                        <p class="intro-text-p intro-text rounded-2">
+                          The tool operates by having the user interface (client) communicate with a middle layer
+                          (FastAPI),
+                          which exposes various endpoints offering different functionalities. These endpoints
+                          primarily
+                          interact
+                          with the Salt API to execute jobs and return the results to the client. Simple... 😊
+                        </p>
+                      </div>
+                      <div data-aos="flip-up" data-aos-delay="150" data-aos-duration="1000">
+                        <p class="intro-text-p intro-text text-warning rounded-2">
+                          The technologies used in this project are implemented in such a way and extension that helps
+                          to
+                          demonstrate the
+                          features and concepts but are <strong style="font-size: 1.1em;"><em>not yet intended for
+                              production-grade
+                              deployment</em></strong>.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row animate__animated animate__fadeIn">
+                  <h3> Technologies in this project</h3>
+
+                  <div class="col" data-aos="flip-left" data-aos-delay="200" data-aos-duration="1000"
+                    style="max-width:fit-content;">
+                    <ul class="intro-text text-warning rounded-2 list-unstyled">
+                      <li>
+                        <a class="text-decoration-none" href="https://developer.mozilla.org/en-US/docs/Web/HTML"
+                          target="_blank">
+                          <img src="https://www.w3.org/html/logo/downloads/HTML5_Logo_256.png" alt="HTML"
+                            style="width:20px; height:20px;">
+                          HTML
+                        </a>
+                      </li>
+                      <li>
+                        <a class="text-decoration-none" href="https://developer.mozilla.org/en-US/docs/Web/CSS"
+                          target="_blank">
+                          <img src="https://upload.wikimedia.org/wikipedia/commons/6/62/CSS3_logo.svg" alt="CSS"
+                            style="width:20px; height:20px;">
+                          CSS
+                        </a>
+                      </li>
+                      <li>
+                        <a class="text-decoration-none" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"
+                          target="_blank">
+                          <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png"
+                            alt="JavaScript" style="width:20px; height:20px;">
+                          JavaScript
+                        </a>
+                      </li>
+                      <li>
+                        <a class="text-decoration-none" href="https://getbootstrap.com/" target="_blank">
+                          <img src="https://getbootstrap.com/docs/5.3/assets/brand/bootstrap-logo-shadow.png"
+                            alt="Bootstrap" style="width:20px; height:20px;">
+                          Bootstrap
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div class="col" data-aos="flip-left" data-aos-delay="400" data-aos-duration="1000"
+                    style="max-width:fit-content;">
+                    <ul class="intro-text text-warning rounded-2 list-unstyled">
+                      <li>
+                        <a class="text-decoration-none" href="https://saltproject.io/" target="_blank">
+                          <img src="https://saltproject.io/images/logo.svg" alt="Salt Project"
+                            style="width:20px; height:20px;">
+                          Salt Project
+                        </a>
+                      </li>
+                      <li>
+                        <a class="text-decoration-none" href="https://www.python.org/" target="_blank">
+                          <img src="https://www.python.org/static/community_logos/python-logo.png" alt="Python"
+                            style="width:20px; height:20px;">
+                          Python
+                        </a>
+                      </li>
+                      <li>
+                        <a class="text-decoration-none" href="https://fastapi.tiangolo.com/" target="_blank">
+                          <img src="https://fastapi.tiangolo.com/img/logo-margin/logo-teal.png" alt="FastAPI"
+                            style="width:20px; height:20px;">
+                          FastAPI
+                        </a>
+                      </li>
+                      <li>
+                        <a class="text-decoration-none" href="https://nats.io/" target="_blank">
+                          <img src="https://nats.io/img/logos/nats-horizontal-color.png" alt="NATS"
+                            style="width:20px; height:20px;">
+                          NATS
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div class="col" data-aos="flip-left" data-aos-delay="600" data-aos-duration="1000"
+                    style="max-width:fit-content;">
+                    <ul class="intro-text text-warning rounded-2 list-unstyled">
+                      <li>
+                        <a class="text-decoration-none" href="https://redis.io/" target="_blank">
+                          <img
+                            src="https://redis.io/wp-content/uploads/2024/04/Logotype.svg?auto=webp&quality=85,75&width=120"
+                            alt="Redis" style="width:20px; height:20px;">
+                          Redis
+                        </a>
+                      </li>
+                      <li>
+                        <a class="text-decoration-none" href="https://www.postgresql.org/" target="_blank">
+                          <img src="https://www.postgresql.org/media/img/about/press/elephant.png" alt="Postgres"
+                            style="width:20px; height:20px;">
+                          Postgres
+                        </a>
+                      </li>
+                      <li>
+                        <a class="text-decoration-none" href="https://supabase.com/" target="_blank">
+                          <img src="https://supabase.com/images/logo-dark.png" alt="Supabase"
+                            style="width:20px; height:20px;">
+                          Supabase
+                        </a>
+                      </li>
+
+                    </ul>
+                  </div>
+
+                  <div class="col" data-aos="flip-left" data-aos-delay="800" data-aos-duration="1000"
+                    style="max-width:fit-content;">
+                    <ul class="intro-text text-warning rounded-2 list-unstyled">
+                      <li>
+                        <a class="text-decoration-none" href="https://github.com/" target="_blank">
+                          <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png"
+                            alt="GitHub" style="width:20px; height:20px;">
+                          GitHub
+                        </a>
+                      </li>
+                      <li>
+                        <a class="text-decoration-none" href="https://www.docker.com/" target="_blank">
+                          <img src="https://www.docker.com/wp-content/uploads/2022/03/Moby-logo.png" alt="Docker"
+                            style="width:20px; height:20px;">
+                          Docker
+                        </a>
+                      </li>
+                      <li>
+                        <img src="https://a0.awsstatic.com/libra-css/images/logos/aws_logo_smile_1200x630.png"
+                          alt="Cloud" style="width:20px; height:20px;"><span
+                          style="color: #6EA8FE; text-decoration: none; font-size:10px"> Cloud
+                          Technologies</span>
+                      </li>
+                    </ul>
+                  </div>
+
+                </div>
+
+                <div class="row animate__animated animate__fadeIn">
+                  <h3> About me...</h3>
+                  <div class="col-sm-8" data-aos="flip-down" data-aos-duration="500" data-aos-once="true">
+                    <p class="intro-text-p intro-text text-info rounded-2">
+                      I am a DevOps engineer with a passion for automation and integration.
+                      Much experienced at backend than frontend, with a great experience on managing large
+                      environments
+                      and creating custom solutions around Salt and related technologies<br>
+                      You can find me on <strong><a href="https://www.linkedin.com/in/adrian-malaguti/" target="_blank"
+                          style="color: inherit; text-decoration: none;">LinkedIn</a></strong>
+                    </p>
+                  </div>
+
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Right-side content -->
+        <div class="area_toolsbar">
+          <div id="tools-panel" class="col-sm-12 col-xxl-1 bg-secondary m-0 p-0">
+            <!-- Right-side content -->
+            <div class="tools_btn_container">
+              <button id="btn_header_toggle" class="btn btn-dark btn-lg" onclick="toggleHeader()">
+                Nav<br>&#x25B2 &#x25BC
+              </button>
+            </div>
+
+            <div class="tools_btn_container">
+              <button id="btn_tokens_copy" type="button" class="btn btn-dark btn-lg" data-bs-toggle="modal"
+                data-bs-target="#tokensModal" data-bs-customData="Tokens">
+                Tokens<br>🔑
+              </button>
+              <!-- Modals -->
+              <div class="modal fade" aria-hidden="false" id="tokensModal" tabindex="-1" aria-labelledby="tokensModalLabel">
+                <div class="modal-dialog modal-lg">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h6 class="modal-title text-white" id="tokensModalLabel">Available tokens</h6>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      <button type="button" class="btn btn-primary" onclick="copyToken()">Copy token</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="tools_btn_container">
+              <button id="btn_masters" type="button" class="btn btn-dark btn-lg" data-bs-toggle="modal"
+                data-bs-target="#mastersModal" data-bs-customData="Masters">
+                Masters<br>🖥️
+              </button>
+              <!-- Modals -->
+              <div class="modal fade" aria-hidden="false" id="mastersModal" tabindex="-1" aria-labelledby="mastersModalLabel">
+                <div class="modal-dialog modal-lg">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h6 class="modal-title text-white" id="mastersModalLabel">Managed Masters</h6>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      <button type="button" class="btn btn-primary"
+                        onclick="pickFromModal_Items('mastersModal','masterSelected')">Pick master</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="tools_btn_container">
+              <button id="btn_minions" type="button" class="btn btn-dark btn-lg" data-bs-toggle="modal"
+                data-bs-target="#minionsModal" data-bs-customData="Minions">
+                Minions<br>👾
+              </button>
+              <!-- Modals -->
+              <div class="modal fade" aria-hidden="false" id="minionsModal" tabindex="-1" aria-labelledby="minionsModalLabel">
+                <div class="modal-dialog modal-lg">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h6 class="modal-title text-white" id="minionsModalLabel">Managed Minions</h6>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      <button type="button" class="btn btn-primary"
+                        onclick="pickFromModal_Items('minionsModal','minionSelected')">Pick minion</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="tools_btn_container">
+              <button id="btn_jobs" type="button" class="btn btn-dark btn-lg" data-bs-toggle="modal"
+                data-bs-target="#jobsModal" data-bs-customData="Jobs">
+                Jobs<br>💼
+              </button>
+              <!-- Modals -->
+              <div class="modal fade" aria-hidden="false" id="jobsModal" tabindex="-1" aria-labelledby="jobsModalLabel">
+                <div class="modal-dialog modal-lg">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h6 class="modal-title text-white" id="jobsModalLabel">Managed jobs</h6>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      <button type="button" class="btn btn-warning" onclick="removeFromModal_Items('jobsModal','asyncJIDs')">
+                        Remove Job
+                      </button>
+                      <button type="button" class="btn btn-primary"
+                        onclick="pickFromModal_Items('jobsModal','jobselected')">
+                        Pick job
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="tools_btn_container">
+              <button id="btn_test-4" class="btn btn-dark btn-lg">
+                Tl4<br>🚫
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <script>
+          tokensModalData()
+          SessStgItemsModalData('mastersModal', 'masters')
+          SessStgItemsModalData('minionsModal', 'minions')
+          SessStgItemsModalData('jobsModal', 'asyncJIDs')
+        </script>
+      </div> <!-- container-main-row end -->
+    </div> <!-- row MAIN end -->
+  </div> <!-- container-fluid end -->
+
+  <!-- WIP -->
+  <div class="row">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-6" data-aos="flip-up" data-aos-delay="200" data-aos-duration="1000">
+          <div id="wip" class="text-warning" w3-include-html="../pages/wip.html"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- FOOTER -->
+  <div class="row">
+    <div class="col-12 footer">
+      <p>
+        &copy; 2024 - Adrian Malaguti. All rights reserved.
+        <a href="./pages/contact_us.html">Contact Us</a>
+      </p>
+    </div>
+  </div>
+
+
+  <script>AOS.init();</script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+  <script>
+    <!-- Include HTML -->
+    includeHTML();
+    queryServersStatus('masters')
+    queryServersStatus('minions')
+  </script>
+</body>
+
+</html>

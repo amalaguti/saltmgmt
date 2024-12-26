@@ -1,0 +1,199 @@
+@use 'vars' as vars;
+@use 'headernav';
+@use 'intro-text';
+@use 'area_tasks';
+@use 'wip';
+@use 'footer';
+@use 'tasks';
+@use 'events';
+@use 'main_content';
+@use 'tools-panel';
+@use 'toasts';
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: vars.$fontsize-small;
+}
+
+// TODO: move this content out to a separate vars file
+:root {
+    --darkbackground-trasparent: #2c3e50d5;
+    --mediumgraycontent: #95a5a6;
+    --darkgraycontent: #7f8c8d;
+    --tableroweven: #95a5a6;
+    --tablerowodd: #b0bec5;
+    --linkblue: #3498db;
+    --lightblue: #3d8ca7;
+    --lighterblue: #5bd6ff;
+}
+
+.hideME {
+    visibility: hidden;
+    display: none;
+}
+
+.code {
+    color: white;
+}
+
+
+.grid-container-pages {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: auto auto;
+    gap: 10px;
+    height: 100%;
+    grid-auto-flow: row;
+    grid-template-areas:
+        "area_tasks area_task_info"
+        "area_tasks area_task_outcome";
+}
+
+
+body {
+    font-family: "Red Hat Display", sans-serif;
+    font-optical-sizing: auto;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+
+
+h2 {
+    // color: #2c3e50;
+    // font-weight: bolder;
+    margin-bottom: 1em;
+    font-size: vars.$fontsize-h2;
+}
+
+h3 {
+    font-size: vars.$fontsize-h3;
+}
+
+h4 {
+    font-size: vars.$fontsize-h4;
+}
+
+h5 {
+    font-size: vars.$fontsize-h5;
+}
+
+h6 {
+    font-size: vars.$fontsize-h6;
+}
+
+p {
+    font-size: vars.$fontsize-small;
+}
+
+a {
+    font-size:  vars.$fontsize-small;
+}
+
+th {
+    font-size: vars.$fontsize-small;
+}
+
+td {
+    font-size: vars.$fontsize-small;
+}
+
+
+.container-grid-main-row {
+    display: grid;
+    grid-template-columns: 1fr 10fr 1fr;
+    height: auto;
+    width: auto;
+    grid-template-areas:
+        "area_left_sidebar area_central_content area_toolsbar"
+
+}
+
+.area_left_sidebar {
+    grid-area: area_left_sidebar;
+}
+
+.area_central_content {
+    grid-area: area_central_content;
+}
+.area_toolsbar {
+    grid-area: area_toolsbar;
+
+}
+
+
+@media only screen and (max-width: 991px) {
+
+    body {
+        padding-left: 0;
+        padding-right:0;
+    }
+
+    .navbar--logo {
+        display: none;
+    }
+
+    .intro-text-p {
+        // width: 300px;
+        overflow: auto;
+        text-wrap: wrap;
+        width: 300px;
+    }
+
+
+    #search_salt_input {
+        float: right;
+        position: absolute;
+        right: 30px;
+        top: 1em;
+        width: 15ch;
+    }
+
+    /* area_left_sidebar reduced to 10px view*/
+    .container-grid-main-row {
+        display: grid;
+        height: auto;
+        width: auto;
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "area_toolsbar"    
+            "area_left_sidebar"
+            "area_central_content";
+    
+    }
+
+    #tools-panel {
+        display: flex;
+        margin-left: 1em !important;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .tools_btn_container  {
+        & > button {
+            align-items: stretch ;
+            position: static !important;
+        }
+    }
+}
+
+
+@media only screen and (min-width: 992px) {
+    .navbar--center_container {
+        background: none !important;
+    }
+
+    #search_salt_input {
+        float: right;
+        position: absolute;
+        right: 10px;
+        top: 1em;
+        width: 15ch;
+    }
+
+
+}
